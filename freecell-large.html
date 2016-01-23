@@ -1,0 +1,124 @@
+
+<html>
+    
+    <script src="common.js"></script>
+    <script src="freecell.js"></script>
+    <!--
+    <map name="baizeMap" id="baize">
+        <area alt="1" coords="8,8,39,53" href="javascript:CellClicked(0)" shape="rect" />
+        <area alt="2" coords="40,8,71,53" href="javascript:CellClicked(1)" shape="rect" />
+        <area alt="3" coords="72,8,103,53" href="javascript:CellClicked(2)" shape="rect" />
+        <area alt="4" coords="104,8,135,53" href="javascript:CellClicked(3)" shape="rect" />
+        <area alt="5" coords="163,8,194,53" href="javascript:HouseClicked(0)" shape="rect" />
+        <area alt="6" coords="195,8,226,53" href="javascript:HouseClicked(1)" shape="rect" />
+        <area alt="7" coords="227,8,258,53" href="javascript:HouseClicked(2)" shape="rect" />
+        <area alt="8" coords="259,8,290,53" href="javascript:HouseClicked(3)" shape="rect" />
+      </map>
+       -->
+          
+    <body style="background-color:#1F9F2E;">
+      <h1>Freecell</h1>
+      <h2>Javascript version by Alex Curtis</h2>
+      <h3>Copyright (c) 2006</h3>
+       
+      <div style="position:relative;">   
+          <img id="0" src="images-large/baize.png" onclick="BaizeClicked()" style="position:absolute; left:0px; top:0px;" />
+          <img id="c0" src="images-large/bay.png" onclick="CellClicked(0)" style="position:absolute; left:8px; top:8px; border:0;" />
+          <img id="c1" src="images-large/bay.png" onclick="CellClicked(1)" style="position:absolute; left:38px; top:8px; border:0;" />
+          <img id="c2" src="images-large/bay.png" onclick="CellClicked(2)" style="position:absolute; left:68px; top:8px; border:0;" />
+          <img id="c3" src="images-large/bay.png" onclick="CellClicked(3)" style="position:absolute; left:98px; top:8px; border:0;" />
+          <img id="h0" src="images-large/bay.png" onclick="HouseClicked(0)" style="position:absolute; left:163px; top:8px; border:0;" />
+          <img id="h1" src="images-large/bay.png" onclick="HouseClicked(1)" style="position:absolute; left:193px; top:8px; border:0;" />
+          <img id="h2" src="images-large/bay.png" onclick="HouseClicked(2)" style="position:absolute; left:223px; top:8px; border:0;" />
+          <img id="h3" src="images-large/bay.png" onclick="HouseClicked(3)" style="position:absolute; left:253px; top:8px; border:0;" />
+          <img id="p0" src="images-large/space.png" onclick="PileClicked(0)" style="position:absolute; left:10px; top:64px; border:0;" />
+          <img id="p1" src="images-large/space.png" onclick="PileClicked(1)" style="position:absolute; left:45px; top:64px; border:0;" />
+          <img id="p2" src="images-large/space.png" onclick="PileClicked(2)" style="position:absolute; left:80px; top:64px; border:0;" />
+          <img id="p3" src="images-large/space.png" onclick="PileClicked(3)" style="position:absolute; left:115px; top:64px; border:0;" />
+          <img id="p4" src="images-large/space.png" onclick="PileClicked(4)" style="position:absolute; left:150px; top:64px; border:0;" />
+          <img id="p5" src="images-large/space.png" onclick="PileClicked(5)" style="position:absolute; left:185px; top:64px; border:0;" />
+          <img id="p6" src="images-large/space.png" onclick="PileClicked(6)" style="position:absolute; left:220px; top:64px; border:0;" />
+          <img id="p7" src="images-large/space.png" onclick="PileClicked(7)" style="position:absolute; left:255px; top:64px; border:0;" />
+          <img id="1" src="images-large/3.png" onclick="CardClicked(1)" style="position:absolute; left:0px; top:0px;" />
+          <img id="2" src="images-large/1.png" onclick="CardClicked(2)" style="position:absolute; left:0px; top:7px;" />
+          <img id="3" src="images-large/4.png" onclick="CardClicked(3)" style="position:absolute; left:0px; top:14px;" />
+          <img id="4" src="images-large/2.png" onclick="CardClicked(4)" style="position:absolute; left:0px; top:21px;" />
+          <img id="5" src="images-large/51.png" onclick="CardClicked(5)" style="position:absolute; left:0px; top:28px;" />
+          <img id="6" src="images-large/49.png" onclick="CardClicked(6)" style="position:absolute; left:0px; top:35px;" />
+          <img id="7" src="images-large/52.png" onclick="CardClicked(7)" style="position:absolute; left:0px; top:42px;" />
+          <img id="8" src="images-large/50.png" onclick="CardClicked(8)" style="position:absolute; left:35px; top:0px;" />
+          <img id="9" src="images-large/47.png" onclick="CardClicked(9)" style="position:absolute; left:35px; top:7px;" />
+          <img id="10" src="images-large/45.png" onclick="CardClicked(10)" style="position:absolute; left:35px; top:14px;" />
+          <img id="11" src="images-large/48.png" onclick="CardClicked(11)" style="position:absolute; left:35px; top:21px;" />
+          <img id="12" src="images-large/46.png" onclick="CardClicked(12)" style="position:absolute; left:35px; top:28px;" />
+          <img id="13" src="images-large/43.png" onclick="CardClicked(13)" style="position:absolute; left:35px; top:35px;" />
+          <img id="14" src="images-large/41.png" onclick="CardClicked(14)" style="position:absolute; left:35px; top:42px;" />
+          <img id="15" src="images-large/44.png" onclick="CardClicked(15)" style="position:absolute; left:70px; top:0px;" />
+          <img id="16" src="images-large/42.png" onclick="CardClicked(16)" style="position:absolute; left:70px; top:7px;" />
+          <img id="17" src="images-large/39.png" onclick="CardClicked(17)" style="position:absolute; left:70px; top:14px;" />
+          <img id="18" src="images-large/37.png" onclick="CardClicked(18)" style="position:absolute; left:70px; top:21px;" />
+          <img id="19" src="images-large/40.png" onclick="CardClicked(19)" style="position:absolute; left:70px; top:28px;" />
+          <img id="20" src="images-large/38.png" onclick="CardClicked(20)" style="position:absolute; left:70px; top:35px;" />
+          <img id="21" src="images-large/35.png" onclick="CardClicked(21)" style="position:absolute; left:70px; top:42px;" />
+          <img id="22" src="images-large/33.png" onclick="CardClicked(22)" style="position:absolute; left:105px; top:0px;" />
+          <img id="23" src="images-large/36.png" onclick="CardClicked(23)" style="position:absolute; left:105px; top:7px;" />
+          <img id="24" src="images-large/34.png" onclick="CardClicked(24)" style="position:absolute; left:105px; top:14px;" />
+          <img id="25" src="images-large/31.png" onclick="CardClicked(25)" style="position:absolute; left:105px; top:21px;" />
+          <img id="26" src="images-large/29.png" onclick="CardClicked(26)" style="position:absolute; left:105px; top:28px;" />
+          <img id="27" src="images-large/32.png" onclick="CardClicked(27)" style="position:absolute; left:105px; top:35px;" />
+          <img id="28" src="images-large/30.png" onclick="CardClicked(28)" style="position:absolute; left:105px; top:42px;" />
+          <img id="29" src="images-large/27.png" onclick="CardClicked(29)" style="position:absolute; left:140px; top:0px;" />
+          <img id="30" src="images-large/25.png" onclick="CardClicked(30)" style="position:absolute; left:140px; top:7px;" />
+          <img id="31" src="images-large/28.png" onclick="CardClicked(31)" style="position:absolute; left:140px; top:14px;" />
+          <img id="32" src="images-large/26.png" onclick="CardClicked(32)" style="position:absolute; left:140px; top:21px;" />
+          <img id="33" src="images-large/23.png" onclick="CardClicked(33)" style="position:absolute; left:140px; top:28px;" />
+          <img id="34" src="images-large/21.png" onclick="CardClicked(34)" style="position:absolute; left:140px; top:35px;" />
+          <img id="35" src="images-large/24.png" onclick="CardClicked(35)" style="position:absolute; left:175px; top:0px;" />
+          <img id="36" src="images-large/22.png" onclick="CardClicked(36)" style="position:absolute; left:175px; top:7px;" />
+          <img id="37" src="images-large/19.png" onclick="CardClicked(37)" style="position:absolute; left:175px; top:14px;" />
+          <img id="38" src="images-large/17.png" onclick="CardClicked(38)" style="position:absolute; left:175px; top:21px;" />
+          <img id="39" src="images-large/20.png" onclick="CardClicked(39)" style="position:absolute; left:175px; top:28px;" />
+          <img id="40" src="images-large/18.png" onclick="CardClicked(40)" style="position:absolute; left:175px; top:35px;" />
+          <img id="41" src="images-large/15.png" onclick="CardClicked(41)" style="position:absolute; left:210px; top:0px;" />
+          <img id="42" src="images-large/13.png" onclick="CardClicked(42)" style="position:absolute; left:210px; top:7px;" />
+          <img id="43" src="images-large/16.png" onclick="CardClicked(43)" style="position:absolute; left:210px; top:14px;" />
+          <img id="44" src="images-large/14.png" onclick="CardClicked(44)" style="position:absolute; left:210px; top:21px;" />
+          <img id="45" src="images-large/11.png" onclick="CardClicked(45)" style="position:absolute; left:210px; top:28px;" />
+          <img id="46" src="images-large/9.png" onclick="CardClicked(46)" style="position:absolute; left:210px; top:35px;" />
+          <img id="47" src="images-large/12.png" onclick="CardClicked(47)" style="position:absolute; left:245px; top:0px;" />
+          <img id="48" src="images-large/10.png" onclick="CardClicked(48)" style="position:absolute; left:245px; top:7px;" />
+          <img id="49" src="images-large/7.png" onclick="CardClicked(49)" style="position:absolute; left:245px; top:14px;" />
+          <img id="50" src="images-large/5.png" onclick="CardClicked(50)" style="position:absolute; left:245px; top:21px;" />
+          <img id="51" src="images-large/8.png" onclick="CardClicked(51)" style="position:absolute; left:245px; top:28px;" />
+          <img id="52" src="images-large/6.png" onclick="CardClicked(52)" style="position:absolute; left:245px; top:35px;" />
+       </div>
+      
+      <!--
+        <div style="position:absolute; top:400px;">
+          <form name="everything">
+            <textarea name="textarea" rows="15" cols="75"></textarea>
+          </form>
+        </div>
+        -->
+        
+       
+        <script language="JavaScript">
+        <!--
+            margin_left = 8; // gap at left of playing aream
+            margin_top = 8; // gap at top of playing area
+            card_width = 72;
+            card_height = 96;
+            pile_spacing = 7; // gap between piles
+            card_separation = 18; // space between cards in a pile
+            margin_horizontal = 16; // space between bottom of cells and top of piles
+            margin_vertical = 49; // space between rightmost cell and left most house
+            debug_on = 0; // Enable debug output
+            InitialiseTable(); // Positions spaces for cards to go in
+            ShuffleDeck(); 
+            DealDeck(); 
+            DrawDeck(); // Positions cards in their starting places
+        // -->
+        </script>
+    </body>
+</html>
+      
