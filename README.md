@@ -2,6 +2,8 @@
 
 ![Screenshot](./freecell-large-screenshot.png?raw=true)
 
+[See Demo](http://alexandercurtis.github.io/freecell/freecell-large.html)
+
 This is a Javascript implementation of the Freecell card game. There's a version with normal sized cards, and one with tiny cards that I wrote to play on my mobile phone.
 
 ## To run
